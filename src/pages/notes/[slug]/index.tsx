@@ -18,10 +18,6 @@ const MarkDownWrapper = styled(Markdown)`
   border-bottom: 1px dashed var(--color-description);
 `;
 
-const CommentWrapper = styled(Comments)`
-  padding-bottom: 50px;
-`;
-
 const PostPage = (post: Post) => {
   const { content, createdAt, data, slug, timeToRead } = post
   const { title, description, tags } = data || {}
@@ -53,7 +49,7 @@ const PostPage = (post: Post) => {
       <h1 className="header pt-1 py-3">{title || '...'}</h1>
       <Tags data={tags} className="pb-3" />
       <MarkDownWrapper content={content} />
-      <CommentWrapper title={title} className="pb-3" />
+      <Comments title={title} className="pb-3" />
       <ScrollToTop />
     </PostLayout>
     </>

@@ -15,7 +15,7 @@ const PostLayout = ({ children, className }: PostLayoutProps) => {
 
   return (
     <LayoutWrapper>
-      <HeaderWrapper id="top">
+      <HeaderWrapper>
         <div className="wrapper">
           <div className="back-action"  onClick={() => backToPreviousPage()}>
             <UnicodeIcon content="➜" rotateDeg={180} fontSize="16px" />
@@ -23,7 +23,7 @@ const PostLayout = ({ children, className }: PostLayoutProps) => {
           </div>
         </div>
       </HeaderWrapper>
-      <MainWrapper className={className}>{children}</MainWrapper>
+      <MainWrapper className={className} id="top">{children}</MainWrapper>
     </LayoutWrapper>
   )
 }

@@ -12,8 +12,6 @@ import { useMemo } from "react"
 import styled from "styled-components"
 
 const MarkDownWrapper = styled(Markdown)`
-  padding-bottom: 50px;
-
   h2 {
     color: var(--color-link);
     padding: 0 0 6px 0;

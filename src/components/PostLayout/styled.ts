@@ -47,7 +47,7 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   max-width: 70rem;
   padding: 3rem 5rem 5rem 5rem;
@@ -55,7 +55,7 @@ export const MainWrapper = styled.div`
 
   ${mediaQuery.lessThan('medium')`
     max-width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 8rem 1rem;
   `}
 
   .createdDate {

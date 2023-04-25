@@ -36,4 +36,4 @@ Vì một bờ lốc nhiều kiến không ngủ :D
 
 ## Chói mắt quá thì phải làm sao?
 
-Hãy nhỏ mắt bằng V.Rohto và không quên chạm nhẹ bằng môi vào ảnh đại diện của tôi để kích hoạt chế độ ban đêm :D
+Hãy nhỏ mắt bằng V.Rohto và không quên chạm nhẹ vào ảnh đại diện của tôi để kích hoạt chế độ ban đêm :D
