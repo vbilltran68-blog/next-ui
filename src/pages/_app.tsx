@@ -21,7 +21,7 @@ const App = (props: AppProps) => {
     title: `Bill Tech Ký Sự`,
     description: 'My personal blog about software development',
     githubRepo: 'vbilltran68/vbilltran68.github.io',
-    siteURL: 'https://vbilltran68.github.io',
+    siteURL: 'https://khuetran.tech',
   }), [])
 
   return (

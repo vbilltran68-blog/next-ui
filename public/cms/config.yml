@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: vbilltran68/vbilltran68.github.io
-  base_url: https://vbilltran68.github.io/
+  base_url: https://khuetran.tech
   auth_endpoint: api/auth/
 
 media_folder: public/assets/images
