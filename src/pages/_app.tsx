@@ -2,8 +2,9 @@ import '@styles/styles.scss';
 
 import Layout from '@components/Layout'
 import { AppProvider } from '@hooks/app'
-import { App, Theme } from '@interfaces/app'
+import { App } from '@interfaces/app'
 import datetime from '@lib/datetime'
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
@@ -48,6 +49,7 @@ const App = (props: AppProps) => {
       <AppProvider value={appData}>
         <Layout noLayout={noLayout}>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </AppProvider>
     </>
