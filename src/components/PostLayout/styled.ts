@@ -9,6 +9,7 @@ export const LayoutWrapper = styled.div`
   background-color: var(--color-bg-post);
   font-family: var(--fonts-code);
   color: var(--color-post);
+  scroll-behavior: smooth;
 `
 
 export const HeaderWrapper = styled.div`

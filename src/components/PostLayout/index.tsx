@@ -10,7 +10,7 @@ const PostLayout = ({ children, className }: PostLayoutProps) => {
   const router = useRouter()
 
   const backToPreviousPage = () => {
-    router.back();
+    router.replace('/');
   }
 
   return (

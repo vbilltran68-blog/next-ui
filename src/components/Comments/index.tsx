@@ -6,6 +6,7 @@ import { CommentWrapper } from './styled';
 
 type CommentProps = {
   title: string;
+  className?: string;
 }
 
 const getCommentTheme = (theme: Theme | undefined): string => {
@@ -17,8 +18,7 @@ const getCommentTheme = (theme: Theme | undefined): string => {
   }
 }
 
-const Comments = (props: CommentProps) => {
-  const { title } = props
+const Comments = ({ title, className }: CommentProps) => {
   const { githubRepo, theme } = useApp()
 
   const [commentScript, setCommentScript] = useState<HTMLScriptElement>();
@@ -51,7 +51,7 @@ const Comments = (props: CommentProps) => {
     }
   }, [commentScript])
 
-  return <CommentWrapper ref={commentRef} />
+  return <CommentWrapper className={className} ref={commentRef} />
 }
 
 export default Comments

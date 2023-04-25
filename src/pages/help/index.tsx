@@ -12,7 +12,24 @@ import { useMemo } from "react"
 import styled from "styled-components"
 
 const MarkDownWrapper = styled(Markdown)`
-  padding: 0 0 2rem 0;
+  padding-bottom: 50px;
+
+  h2 {
+    color: var(--color-link);
+    padding: 0 0 6px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    color: var(--color-post);
+    line-height: 1.25;
+    margin: 0 0 20px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
 
 type HelpPageProps = {
