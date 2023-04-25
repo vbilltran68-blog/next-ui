@@ -24,8 +24,8 @@ const PostItem = (props: PostProps) => {
         <span className="text-primary">{datetime(createdAt).format('DD/MM/YYYY')}</span>
         <span className="pl-2 text-muted">({post.timeToRead})</span>
       </div>
-      <div className="header text-truncate-2">{title}</div>
-      <div className="description flex-1 text-truncate-2">{description}</div>
+      <div className="header text-truncate-2 flex-2">{title}</div>
+      <div className="description flex-1 text-truncate">{description}</div>
       <Tags data={tags?.slice(0, 2) ?? []} />
     </div>
   </PostWrapper>

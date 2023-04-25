@@ -41,6 +41,9 @@ export const PostWrapper = styled(Card)`
   width: 32%;
   max-width: 32%;
   padding: 0;
+  max-height: 160px;
+  overflow: hidden;
+  height: 127px;
 
   ${mediaQuery.greaterThan('medium')`
     &:hover {
@@ -61,14 +64,20 @@ export const PostWrapper = styled(Card)`
     flex-direction: column;
     gap: 5px;
     padding: 10px;
+    width: 100%;
 
     .header {
       font-weight: bold;
       color: var(--color-post);
+      min-height: 20px;
+      max-height: 40px;
+      line-height: 1.25;
     }
 
     .description {
       color: var(--color-description);
+      max-height: 40px;
+      line-height: 1.25;
     }
   }
 
