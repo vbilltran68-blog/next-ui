@@ -4,7 +4,7 @@ backend:
   repo: vbilltran68/vbilltran68.github.io
   branch: master
   squash_merges: true
-  base_url: https://khuetran.tech
+  base_url: https://khuetran.tech/
   auth_endpoint: api/auth/
 
 media_folder: public/assets/images
