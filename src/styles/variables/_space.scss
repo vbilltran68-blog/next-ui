@@ -1,0 +1,9 @@
+$space: 1rem !default;
+$space-map: (
+  0: 0,
+  1: $space * .25,
+  2: $space * .5,
+  3: $space,
+  4: $space * 1.5,
+  5: $space * 3,
+) !default;

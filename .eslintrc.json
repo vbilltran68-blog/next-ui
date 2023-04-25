@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es2020": true,
+    "jest": true
+  },
+  "extends": ["next", "prettier"],
+  "plugins": ["simple-import-sort", "import"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "prefer-const": "error",
+    "no-console": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

@@ -1,0 +1,9 @@
+.icon-feed::before {
+  content: "";
+  display:block;
+  height:125px;
+  width:125px;
+  background-size: 125px 125px;
+  background-image: url(/assets/icon/feed.svg);
+  background-repeat: no-repeat;
+}

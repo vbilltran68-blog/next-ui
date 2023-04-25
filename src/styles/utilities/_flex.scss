@@ -1,0 +1,101 @@
+@for $i from 0 through 5 {
+  .flex-#{$i} {
+    flex: $i !important;
+  }
+}
+
+@mixin flex-align-row($prefix) {
+  &.#{$prefix}-left {
+    justify-content: flex-start;
+  }
+
+  &.#{$prefix}-center {
+    justify-content: center;
+  }
+
+  &.#{$prefix}-right {
+    justify-content: flex-end;
+  }
+
+  &.#{$prefix}-top {
+    align-items: flex-start;
+  }
+
+  &.#{$prefix}-middle {
+    align-items: center;
+  }
+
+  &.#{$prefix}-bottom {
+    align-items: flex-end;
+  }
+}
+
+@mixin flex-align-column($prefix) {
+  &.#{$prefix}-left {
+    align-items: flex-start;
+  }
+
+  &.#{$prefix}-center {
+    align-items: center;
+  }
+
+  &.#{$prefix}-right {
+    align-items: flex-end;
+  }
+
+  &.#{$prefix}-top {
+    justify-content: flex-start;
+  }
+
+  &.#{$prefix}-middle {
+    justify-content: center;
+  }
+
+  &.#{$prefix}-bottom {
+    justify-content: flex-end;
+  }
+}
+
+// large
+.flex {
+  display: flex;
+  @include flex-align-row('flex');
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  @include flex-align-column('flex');
+}
+
+// medium
+.flex-md {
+  @include small {
+    display: flex;
+    @include flex-align-row('flex-md');
+  }
+}
+
+.flex-md-column {
+    @include small {
+      display: flex;
+      flex-direction: column;
+      @include flex-align-column('flex-md');
+    }
+}
+
+// small
+.flex-sm {
+  @include small {
+    display: flex;
+    @include flex-align-row('flex-sm');
+  }
+}
+
+.flex-sm-column {
+    @include small {
+      display: flex;
+      flex-direction: column;
+      @include flex-align-column('flex-sm');
+    }
+}

@@ -1,0 +1,14 @@
+@mixin text-headings {
+  h1, h2, h3,
+  h4, h5, h6 {
+      @content;
+  }
+}
+
+@mixin text-truncate($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+}

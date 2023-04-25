@@ -1,0 +1,11 @@
+.text-truncate {
+  @include text-truncate(1);
+}
+
+.text-truncate-2 {
+  @include text-truncate(2);
+}
+
+.text-truncate-3 {
+  @include text-truncate(3);
+}
