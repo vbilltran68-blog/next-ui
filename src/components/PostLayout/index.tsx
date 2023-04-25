@@ -1,4 +1,4 @@
-import UnicodeIcon from "@components/StringIcon";
+import UnicodeIcon from "@components/UnicodeIcon";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react"
 

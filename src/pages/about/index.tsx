@@ -50,7 +50,7 @@ const HelpPage = (props: HelpPageProps) => {
       description={description}
       themeColor={themeColor}
       openGraph={{
-        url: `${siteURL}/help`,
+        url: `${siteURL}/about`,
         title: title,
         description: description,
         images: [

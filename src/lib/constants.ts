@@ -10,8 +10,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     icon: IconPath[IconType.Note]
   },
   {
-    label: 'Help',
-    href: '/help',
+    label: 'About',
+    href: '/about',
     icon: IconPath[IconType.Help]
   },
 ]
