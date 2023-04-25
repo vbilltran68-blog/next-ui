@@ -1,4 +1,3 @@
-# https://decapcms.org/docs/add-to-your-site/
 backend:
   name: github
   repo: vbilltran68/vbilltran68.github.io
@@ -9,9 +8,7 @@ backend:
 
 media_folder: public/assets/images
 public_folder: /assets/images
-
 publish_mode: editorial_workflow
-
 slug:
   encoding: 'ascii'
   clean_accents: true
