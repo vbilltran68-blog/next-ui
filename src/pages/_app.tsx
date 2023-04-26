@@ -15,14 +15,16 @@ const App = (props: AppProps) => {
 
   const { noLayout } = pageProps || {}
 
+  // TODO: read from env file
   const appData: App = useMemo(() => ({
     name: 'Bill',
     avatar: 'https://avatars.githubusercontent.com/u/28431254?v=4',
     year: datetime.now().year(),
     title: `Bill Tech Ký Sự`,
     description: 'My personal blog about software development',
-    githubRepo: 'vbilltran68/vbilltran68.github.io',
+    githubRepo: 'vbilltran68/vbilltran68-blog',
     siteURL: 'https://khuetran.tech',
+    ogServiceURL: 'https://vbilltran68-blog-og-service.vercel.app'
   }), [])
 
   return (

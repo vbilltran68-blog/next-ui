@@ -1,5 +1,5 @@
 {
-  "name": "vbilltran68.github.io",
+  "name": "vbilltran68-blog",
   "private": true,
   "version": "1.0.0",
   "description": "My personal blog about software development",
@@ -53,6 +53,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vbilltran68/vbilltran68.github.io"
+    "url": "https://github.com/vbilltran68/vbilltran68-blog"
   }
 }

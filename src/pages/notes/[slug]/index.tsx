@@ -21,7 +21,7 @@ const MarkDownWrapper = styled(Markdown)`
 const PostPage = (post: Post) => {
   const { content, createdAt, data, slug, timeToRead } = post
   const { title, description, tags } = data || {}
-  const { name, themeColor, siteURL } = useApp()
+  const { name, themeColor, siteURL, ogServiceURL } = useApp()
 
   return (
     <>
@@ -35,7 +35,7 @@ const PostPage = (post: Post) => {
         description: description,
         images: [
           {
-            url: `https://vbilltran68.github.io/gen/images/${encodeURIComponent(title)}.png`,
+            url: `${ogServiceURL}/api/og?title=${encodeURIComponent(title)}`,
             alt: `${title}`
           }
         ]

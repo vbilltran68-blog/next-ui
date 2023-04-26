@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: vbilltran68/vbilltran68.github.io
+  repo: vbilltran68/vbilltran68-blog
   branch: master
   squash_merges: true
   base_url: https://khuetran.tech/
@@ -29,4 +29,5 @@ collections:
         }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: [''] }
+      - { label: 'Reference links', name: 'references', widget: 'list', default: ['']}
       - { label: 'Body', name: 'body', widget: 'markdown' }

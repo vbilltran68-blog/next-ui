@@ -16,4 +16,5 @@ export interface App {
   siteURL: string;
   locale?: string;
   themeColor?: string;
+  ogServiceURL: string;
 }

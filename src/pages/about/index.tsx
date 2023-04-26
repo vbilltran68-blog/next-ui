@@ -37,7 +37,7 @@ type HelpPageProps = {
 
 const HelpPage = (props: HelpPageProps) => {
   const { content } = props
-  const { title, description, themeColor, siteURL } = useApp()
+  const { title, description, themeColor, siteURL, ogServiceURL } = useApp()
 
   const finalContent = useMemo(() => {
     return content.replace('$year', datetime.now().year().toString());
@@ -55,7 +55,7 @@ const HelpPage = (props: HelpPageProps) => {
         description: description,
         images: [
           {
-            url: `https://vbilltran68.github.io/gen/images/${encodeURIComponent(title)}.png`,
+            url: `${ogServiceURL}/api/og?title=${encodeURIComponent(title)}`,
             alt: `${title}`
           }
         ]
