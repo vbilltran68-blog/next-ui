@@ -1,7 +1,6 @@
 import Comments from "@components/Comments"
-import Markdown from "@components/Markdown"
+import HtmlRender from "@components/HtmlRender"
 import PostLayout from "@components/PostLayout"
-import ScrollToTop from "@components/ScrollToTop"
 import Tags from "@components/Tags"
 import { useApp } from "@hooks/app"
 import { Post } from "@interfaces/post"
@@ -12,10 +11,10 @@ import { NextSeo } from "next-seo"
 import { ParsedUrlQueryInput } from "querystring"
 import styled from "styled-components"
 
-const MarkDownWrapper = styled(Markdown)`
+const HtmlRenderWrapper = styled(HtmlRender)`
   padding: 2rem 0;
-  border-top: 1px dashed var(--color-description);
-  border-bottom: 1px dashed var(--color-description);
+  border-top: 1px dashed var(--color-muted);
+  border-bottom: 1px dashed var(--color-muted);
 `;
 
 const PostPage = (post: Post) => {
@@ -48,9 +47,8 @@ const PostPage = (post: Post) => {
       </div>
       <h1 className="header pt-1 py-3">{title || '...'}</h1>
       <Tags data={tags} className="pb-3" />
-      <MarkDownWrapper content={content} />
+      <HtmlRenderWrapper content={content} />
       <Comments title={title} className="pb-3" />
-      <ScrollToTop />
     </PostLayout>
     </>
   )

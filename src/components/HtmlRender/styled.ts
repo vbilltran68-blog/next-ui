@@ -1,37 +1,40 @@
 import styled from "styled-components";
 
-export const MarkdownWrapper = styled.div`
+export const HtmlRenderWrapper = styled.div`
   font-family: monospace, sans-serif;
   line-height: 1.5;
   word-wrap: break-word;
   font-size: 16px;
 
+  /* headings */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.016em;
+    margin: 32px 0 10px 0;
+    line-height: 1.75rem;
+    border-bottom: 1px solid transparent;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  /* headings */
+
+  /* code */
+  pre {
+    margin-bottom: 16px;
+  }
+
+  code {
+    &:not(.hljs) {
+      background-color: var(--color-description);
+      color: var(--color-bg-post);
+    }
+  }
+  /* code */
+
   img {
     border-style: none;
     max-width: 100%;
-  }
-
-  h1 {
-    padding-bottom: 0.3em;
-    font-size: 2em;
-    border-bottom: 1px solid var(--color-description);
-  }
-
-  h2 {
-    padding-bottom: 0.3em;
-    font-size: 1.5em;
-    border-bottom: 1px solid var(--color-description);
-    margin-top: 24px;
-    margin-bottom: 16px;
-    line-height: 1.25;
-  }
-
-  h3 {
-    font-size: 1.25em;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    line-height: 1.25;
   }
 
   p {
@@ -53,10 +56,10 @@ export const MarkdownWrapper = styled.div`
     white-space: break-spaces;
     border-radius: 6px;
 
-    &:not(.hljs) {
+    /* &:not(.hljs) {
       background-color: var(--color-description);
       color: var(--color-bg-post);
-    }
+    } */
   }
 
   ul, ol {
@@ -93,11 +96,11 @@ export const MarkdownWrapper = styled.div`
 
     tr {
       background-color: var(--color-transparent);
-      border-top: 1px solid var(--color-description);
+      border-top: 1px solid var(--color-muted);
 
       th, td {
         padding: 6px 13px;
-        border: 1px solid var(--color-description);
+        border: 1px solid var(--color-muted);
       }
     }
   }
@@ -108,10 +111,10 @@ export const MarkdownWrapper = styled.div`
   }
 
   hr {
-    height: 0.25em;
+    height: 1px;
     padding: 0;
     margin: 24px 0;
-    background-color: var(--color-description);
+    background-color: var(--color-muted);
     border: 0;
   }
 
@@ -128,9 +131,5 @@ export const MarkdownWrapper = styled.div`
     border-radius: 6px;
     box-shadow: inset 0 -1px 0 var(--color-description);
     user-select: none;
-  }
-
-  pre {
-    margin-bottom: 16px;
   }
 `;

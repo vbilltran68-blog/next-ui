@@ -1,4 +1,4 @@
-import Markdown from "@components/Markdown"
+import HtmlRender from "@components/HtmlRender"
 import PostLayout from "@components/PostLayout"
 import ScrollToTop from "@components/ScrollToTop"
 import { useApp } from "@hooks/app"
@@ -11,19 +11,13 @@ import { ParsedUrlQueryInput } from "querystring"
 import { useMemo } from "react"
 import styled from "styled-components"
 
-const MarkDownWrapper = styled(Markdown)`
+const MarkDownWrapper = styled(HtmlRender)`
   h2 {
     color: var(--color-link);
-    padding: 0 0 6px 0;
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   p {
     color: var(--color-post);
-    line-height: 1.25;
-    margin: 0 0 20px 0;
     &:last-child {
       margin-bottom: 0;
     }
@@ -64,7 +58,6 @@ const HelpPage = (props: HelpPageProps) => {
     <PostLayout>
       <h1 className="flex flex-center text-code mb-3">{title}</h1>
       <MarkDownWrapper content={finalContent} />
-      <ScrollToTop />
     </PostLayout>
     </>
   )

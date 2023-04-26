@@ -10,6 +10,7 @@ export const LayoutWrapper = styled.div`
   font-family: var(--fonts-code);
   color: var(--color-post);
   scroll-behavior: smooth;
+  transition: all 1s ease-in-out;
 `
 
 export const HeaderWrapper = styled.div`

@@ -12,7 +12,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
     label: 'About',
     href: '/about',
-    icon: IconPath[IconType.Help]
+    icon: IconPath[IconType.Info]
   },
 ]
 

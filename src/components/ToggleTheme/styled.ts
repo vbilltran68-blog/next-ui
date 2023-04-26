@@ -1,10 +1,9 @@
-import Link from "next/link";
 import styled from "styled-components"
 
-export const ScrollWrapper = styled(Link)`
+export const ToggleThemeWrapper = styled.div`
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -26,7 +25,7 @@ export const ScrollWrapper = styled(Link)`
 
     svg {
       path {
-        fill: var(--color-link);
+        fill: var(--color-accent);
       }
     }
   }

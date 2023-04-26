@@ -29,5 +29,4 @@ collections:
         }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: [''] }
-      - { label: 'Reference links', name: 'references', widget: 'list', default: ['']}
       - { label: 'Body', name: 'body', widget: 'markdown' }
