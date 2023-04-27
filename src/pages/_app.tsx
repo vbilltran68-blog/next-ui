@@ -3,6 +3,7 @@ import '@styles/styles.scss';
 import Layout from '@components/Layout'
 import { AppProvider } from '@hooks/app'
 import { App } from '@interfaces/app'
+import { APP_URL, GITHUB_REPO } from '@lib/constants';
 import datetime from '@lib/datetime'
 import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
@@ -22,9 +23,8 @@ const App = (props: AppProps) => {
     year: datetime.now().year(),
     title: `Bill Tech Ký Sự`,
     description: 'My personal blog about software development',
-    githubRepo: 'vbilltran68/vbilltran68-blog',
-    siteURL: 'https://khuetran.tech',
-    ogServiceURL: 'https://vbilltran68-blog-og-service.vercel.app'
+    githubRepo: GITHUB_REPO,
+    appURL: APP_URL,
   }), [])
 
   return (
@@ -45,7 +45,7 @@ const App = (props: AppProps) => {
       <DefaultSeo themeColor={appData.themeColor} openGraph={{
         type: 'website',
         locale: appData.locale,
-        url: appData.siteURL,
+        url: appData.appURL,
         site_name: appData.title,
       }} />
       <AppProvider value={appData}>

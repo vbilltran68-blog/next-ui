@@ -13,8 +13,7 @@ export interface App {
   theme?: Theme;
   toggleTheme?: Function;
   githubRepo?: string;
-  siteURL: string;
+  appURL: string;
   locale?: string;
   themeColor?: string;
-  ogServiceURL: string;
 }

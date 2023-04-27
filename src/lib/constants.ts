@@ -19,3 +19,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 // DIRECTORY
 export const POST_DIR = join(process.cwd(), 'posts')
 export const INFO_DIR = join(process.cwd(), 'info')
+
+// APP => move to env file
+export const APP_URL = process.env.APP_URL || 'https://khuetran.tech'
+export const GITHUB_REPO = process.env.GITHUB_REPO || 'vbilltran68/vbilltran68-blog'

@@ -1,9 +1,8 @@
 import HtmlRender from "@components/HtmlRender"
 import PostLayout from "@components/PostLayout"
-import ScrollToTop from "@components/ScrollToTop"
 import { useApp } from "@hooks/app"
 import { Profile } from "@interfaces/profile"
-import { getProfile } from "@lib/api"
+import { getOgImageUrl, getProfile } from "@lib/api"
 import datetime from "@lib/datetime"
 import markdownToHtml from "@lib/markdownToHtml"
 import { NextSeo } from "next-seo"
@@ -31,7 +30,7 @@ type HelpPageProps = {
 
 const HelpPage = (props: HelpPageProps) => {
   const { content } = props
-  const { title, description, themeColor, siteURL, ogServiceURL } = useApp()
+  const { title, description, themeColor, appURL } = useApp()
 
   const finalContent = useMemo(() => {
     return content.replace('$year', datetime.now().year().toString());
@@ -44,12 +43,12 @@ const HelpPage = (props: HelpPageProps) => {
       description={description}
       themeColor={themeColor}
       openGraph={{
-        url: `${siteURL}/about`,
+        url: `${appURL}/about`,
         title: title,
         description: description,
         images: [
           {
-            url: `${ogServiceURL}/api/og?title=${encodeURIComponent(title)}`,
+            url: getOgImageUrl({ data: { title: 'Thông tin', description: 'Nguồn gốc và lịch sử hình thành' } } as any),
             alt: `${title}`
           }
         ]

@@ -1,11 +1,12 @@
 import { Post } from '@interfaces/post'
 import { Profile } from '@interfaces/profile'
+import { concatString } from '@utils/string'
 import { calculateTimeToRead } from '@utils/timeToRead'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { join } from 'path'
 
-import { INFO_DIR, POST_DIR } from './constants'
+import { APP_URL, INFO_DIR, POST_DIR } from './constants'
 import datetime from './datetime'
 
 export const getPostByFilename = (filename: string): Post | null => {
@@ -21,7 +22,7 @@ export const getPostByFilename = (filename: string): Post | null => {
   return {
     slug,
     createdAt: data.createdAt.toString(),
-    data: { ...data, createdAt },
+    data: { ...data, createdAt, tags: (data?.tags || []).map((tag: string) => tag.replace(/\s/g, '-')) },
     content,
     timeToRead: calculateTimeToRead(content)
   }
@@ -53,4 +54,16 @@ export const getProfile = (): Profile => {
     data,
     content,
   }
+}
+
+export const getOgImageUrl = (post: Post): string => {
+  const url = new URL(`${APP_URL}/api/og`);
+  const { data, createdAt, timeToRead } = post
+  const { title, tags, description } = data || {}
+  url.searchParams.set('title', title)
+  tags?.length > 0 && url.searchParams.set('tags', (tags || []).slice(0, 3))
+  createdAt && url.searchParams.set('createdDate', datetime(createdAt).format('DD/MM/YYYY'))
+  timeToRead && url.searchParams.set('timeToRead', timeToRead)
+  description && url.searchParams.set('description', description)
+  return url.toString()
 }

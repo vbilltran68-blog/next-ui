@@ -4,7 +4,7 @@ import PostLayout from "@components/PostLayout"
 import Tags from "@components/Tags"
 import { useApp } from "@hooks/app"
 import { Post } from "@interfaces/post"
-import { getAllPosts, getPostByFilename } from "@lib/api"
+import { getAllPosts, getOgImageUrl, getPostByFilename } from "@lib/api"
 import datetime from "@lib/datetime"
 import markdownToHtml from "@lib/markdownToHtml"
 import { NextSeo } from "next-seo"
@@ -20,7 +20,7 @@ const HtmlRenderWrapper = styled(HtmlRender)`
 const PostPage = (post: Post) => {
   const { content, createdAt, data, slug, timeToRead } = post
   const { title, description, tags } = data || {}
-  const { name, themeColor, siteURL, ogServiceURL } = useApp()
+  const { name, themeColor, appURL } = useApp()
 
   return (
     <>
@@ -29,12 +29,12 @@ const PostPage = (post: Post) => {
       description={description}
       themeColor={themeColor}
       openGraph={{
-        url: `${siteURL}/notes/${slug}`,
+        url: `${appURL}/notes/${slug}`,
         title: `${title} - ${name}`,
         description: description,
         images: [
           {
-            url: `${ogServiceURL}/api/og?title=${encodeURIComponent(title)}`,
+            url: getOgImageUrl(post),
             alt: `${title}`
           }
         ]

@@ -11,9 +11,8 @@ export const AppContext = createContext<App>({
   description: '',
   theme: Theme.DEFAULT,
   toggleTheme: Function,
-  siteURL: "",
+  appURL: "",
   locale: "",
-  ogServiceURL: ""
 })
 
 type AppProviderProps = PropsWithChildren<{ value: App }>
