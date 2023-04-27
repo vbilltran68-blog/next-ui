@@ -39,7 +39,7 @@ export const HeaderWrapper = styled.div`
   ${mediaQuery.lessThan('medium')`
     .wrapper {
       max-width: 100%;
-      padding: 2rem 1rem;
+      padding: 1rem;
     }
   `}
 `
@@ -56,12 +56,7 @@ export const MainWrapper = styled.div`
 
   ${mediaQuery.lessThan('medium')`
     max-width: 100%;
-    padding: 2rem 1rem 8rem 1rem;
+    padding: 2rem 1rem 5rem 1rem;
   `}
-
-  .createdDate {
-    color: silver;
-    margin: 1rem 0;
-  }
 `
 

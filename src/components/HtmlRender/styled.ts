@@ -22,9 +22,13 @@ export const HtmlRenderWrapper = styled.div`
   /* code */
   pre {
     margin-bottom: 16px;
+    overflow-x: auto;
   }
 
   code {
+    width: max-content;
+    min-width: 100%;
+
     &:not(.hljs) {
       background-color: var(--color-description);
       color: var(--color-bg-post);
