@@ -149,6 +149,10 @@ export default async function handler(req: NextRequest) {
       {
         width: 800,
         height: 400,
+        headers: {
+          'content-type': 'image/png',
+          'cache-control': 'public, max-age=31536000, no-transform, immutable',
+        },
         fonts: [
           {
             name: 'Bangers',
