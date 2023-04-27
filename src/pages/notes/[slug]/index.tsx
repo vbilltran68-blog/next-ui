@@ -25,12 +25,12 @@ const PostPage = (post: Post) => {
   return (
     <>
     <NextSeo
-      title={`${title} - ${name}`}
+      title={title}
       description={description}
       themeColor={themeColor}
       openGraph={{
         url: `${appURL}/notes/${slug}`,
-        title: `${title} - ${name}`,
+        title,
         description: description,
         images: [
           {
