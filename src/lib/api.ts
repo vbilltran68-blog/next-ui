@@ -57,7 +57,7 @@ export const getProfile = (): Profile => {
 }
 
 export const getOgImageUrl = (post: Post): string => {
-  const url = new URL(`${APP_URL}/api/og`);
+  const url = new URL(`https://open-graph-service.vercel.app/api/gen-blog-img`);
   const { data, createdAt, timeToRead } = post
   const { title, tags, description } = data || {}
   url.searchParams.set('title', title)
