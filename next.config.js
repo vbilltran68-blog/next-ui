@@ -27,9 +27,6 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false }
-    config.experiments = {
-      layers: true,
-    }
     return config
   },
 }

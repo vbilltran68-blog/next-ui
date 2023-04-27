@@ -1,6 +1,6 @@
 // /pages/api/og.tsx
 
-import { concatString, cutString } from '@utils/string'
+import { cutString } from '@utils/string'
 import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
 
@@ -13,9 +13,9 @@ const fetchFont = (fontURL: string) => fetch(new URL(
   import.meta.url,
 ).href).then((res) => res.arrayBuffer())
 
-const bangerFont = fetchFont('http://localhost:3000/fonts/bangers/Bangers-Regular.ttf')
-const monospaceFont = fetchFont('http://localhost:3000/fonts/space-mono/SpaceMono-Bold.ttf')
-const merriweatherFont = fetchFont('http://localhost:3000/fonts/merri-weather/Merriweather-Bold.ttf')
+const bangerFont = fetchFont(`https://khuetran.tech/fonts/bangers/Bangers-Regular.ttf`)
+const monospaceFont = fetchFont(`https://khuetran.tech/fonts/space-mono/SpaceMono-Bold.ttf`)
+const merriweatherFont = fetchFont(`https://khuetran.tech/fonts/merri-weather/Merriweather-Bold.ttf`)
 
 export default async function handler(req: NextRequest) {
   const [
@@ -149,10 +149,6 @@ export default async function handler(req: NextRequest) {
       {
         width: 800,
         height: 400,
-        headers: {
-          'content-type': 'image/png',
-          'cache-control': 'public, max-age=31536000, no-transform, immutable',
-        },
         fonts: [
           {
             name: 'Bangers',
