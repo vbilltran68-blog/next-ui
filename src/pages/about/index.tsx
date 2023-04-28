@@ -8,20 +8,6 @@ import markdownToHtml from "@lib/markdownToHtml"
 import { NextSeo } from "next-seo"
 import { ParsedUrlQueryInput } from "querystring"
 import { useMemo } from "react"
-import styled from "styled-components"
-
-const MarkDownWrapper = styled(HtmlRender)`
-  h2 {
-    color: var(--color-link);
-  }
-
-  p {
-    color: var(--color-post);
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-`
 
 type HelpPageProps = {
   data: Profile;
@@ -56,7 +42,7 @@ const HelpPage = (props: HelpPageProps) => {
     />
     <PostLayout>
       <h1 className="flex flex-center text-code mb-3">{title}</h1>
-      <MarkDownWrapper content={finalContent} />
+      <HtmlRender content={finalContent} />
     </PostLayout>
     </>
   )

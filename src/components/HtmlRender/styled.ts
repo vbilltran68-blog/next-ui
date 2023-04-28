@@ -1,10 +1,12 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HtmlRenderWrapper = styled.div`
   font-family: monospace, sans-serif;
   line-height: 1.5;
   word-wrap: break-word;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-post);
 
   /* headings */
   h1, h2, h3, h4, h5, h6 {
@@ -12,6 +14,10 @@ export const HtmlRenderWrapper = styled.div`
     margin: 32px 0 10px 0;
     line-height: 1.75rem;
     border-bottom: 1px solid transparent;
+    color: var(--color-header);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-muted);
+    padding-bottom: 10px;
 
     &:first-child {
       margin-top: 0;
@@ -30,8 +36,9 @@ export const HtmlRenderWrapper = styled.div`
     min-width: 100%;
 
     &:not(.hljs) {
-      background-color: var(--color-description);
-      color: var(--color-bg-post);
+      padding: 0;
+      color: var(--color-primary);
+      font-weight: 700;
     }
   }
   /* code */
@@ -43,7 +50,7 @@ export const HtmlRenderWrapper = styled.div`
 
   p {
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   blockquote {
@@ -79,6 +86,7 @@ export const HtmlRenderWrapper = styled.div`
 
   em {
     font-style: italic;
+    color: var(--color-description);
   }
 
   strong {
@@ -136,4 +144,4 @@ export const HtmlRenderWrapper = styled.div`
     box-shadow: inset 0 -1px 0 var(--color-description);
     user-select: none;
   }
-`;
+`

@@ -7,11 +7,11 @@ tags:
 
 ## Sơ lược
 
-**Bill** là một nhà văn, lập trình viên, nhà sử học và là nhà chém gió từ những năm (2017-$year) của thế kỉ XXI. Ông có công trong việc ghi chép và cô đọng các tinh hoa lộn xộn của giới công nghệ. Ngoài ra những áng văn, thơ và ký sự bất hủ của ông cũng khiến cả thế giới phải trầm cảm khen ngợi.
+`Bill` là một nhà văn, lập trình viên, nhà sử học và là nhà chém gió từ những năm (2017-$year) của thế kỉ XXI. Ông có công trong việc ghi chép và cô đọng các tinh hoa lộn xộn của giới công nghệ. Ngoài ra những áng văn, thơ và ký sự bất hủ của ông cũng khiến cả thế giới phải trầm cảm khen ngợi.
 
 ## Hoàn cảnh lịch sử
 
-**Bill Tech Ký Sự** ra đời trong hoàn cảnh cực kỳ ngặt nghèo, khi thế giới đang trải qua một cuộc cách mạng công nghệ tương đương với thời Tam Quốc Diễn Nghĩa của Trung Quốc cổ xưa.
+`Bill Tech Ký Sự` ra đời trong hoàn cảnh cực kỳ ngặt nghèo, khi thế giới đang trải qua một cuộc cách mạng công nghệ tương đương với thời Tam Quốc Diễn Nghĩa của Trung Quốc cổ xưa.
 
 Giống như thời Tam Quốc, thế giới công nghệ đang chứng kiến sự tranh đấu giữa các ông trùm công nghệ lớn như Amazon, Google và Facebook. Chính những ông trùm này đã tạo ra những bước ngoặt quan trọng trong lịch sử công nghệ, giống như Tào Tháo, Lưu Bị và Tôn Quyền trong thời Tam Quốc.
 

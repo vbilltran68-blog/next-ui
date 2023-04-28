@@ -12,15 +12,14 @@ import { ParsedUrlQueryInput } from "querystring"
 import styled from "styled-components"
 
 const HtmlRenderWrapper = styled(HtmlRender)`
-  padding: 2rem 0;
-  border-top: 1px dashed var(--color-muted);
+  padding: 18px 0 20px 0;
   border-bottom: 1px dashed var(--color-muted);
 `;
 
 const PostPage = (post: Post) => {
   const { content, createdAt, data, slug, timeToRead } = post
   const { title, description, tags } = data || {}
-  const { name, themeColor, appURL } = useApp()
+  const { themeColor, appURL } = useApp()
 
   return (
     <>
