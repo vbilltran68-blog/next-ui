@@ -7,7 +7,7 @@ export enum IconType {
   DarkMode = 'dark-mode',
 }
 
-export const IconPath = {
+export const IconPath: Record<string, string> = {
   [IconType.Note]: '/assets/svg-icons/toilet-paper.svg',
   [IconType.Info]: '/assets/svg-icons/info.svg',
   [IconType.History]: '/assets/svg-icons/history.svg',

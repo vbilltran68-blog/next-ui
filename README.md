@@ -1,6 +1,6 @@
-# Bill Tech Ký Sự
+# Bill's Blog
 
-Bill Tech Ký Sự is my personal blog project built using NextJS and deployed on Github Pages.
+Bill's Blog is my personal blog project built using NextJS and deployed on Github Pages.
 
 ## Overview
 

@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .code {
+    font-size: 5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: var(--color-description);
+  }
+}

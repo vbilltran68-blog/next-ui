@@ -105,11 +105,9 @@ Now the guard can be applied to any routes you wish to protect.
 ```js
 // src/app/app.routes.ts
 
-import { Routes, CanActivate } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
-import {
-  AuthGuardService as AuthGuard
-} from './auth/auth-guard.service';
+import { Routes, CanActivate } from '@angular/router'
+import { ProfileComponent } from './profile/profile.component'
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
@@ -119,7 +117,7 @@ export const ROUTES: Routes = [
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }
-];
+]
 ```
 
 The /profile route has an extra config value now: canActivate. The AuthGuard that was created above is passed to an array for canActivate which means it will be run any time someone tries to access the /profile route. If the user is authenticated, they get to the route. If not, they are redirected to the /login route.
@@ -192,14 +190,10 @@ We can now use this RoleGuardService for any of our routes. We might, for exampl
 ```js
 // src/app/app.routes.ts
 
-import { Routes, CanActivate } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
-import {
-  AuthGuardService as AuthGuard
-} from './auth/auth-guard.service';
-import {
-  RoleGuardService as RoleGuard
-} from './auth/role-guard.service';
+import { Routes, CanActivate } from '@angular/router'
+import { ProfileComponent } from './profile/profile.component'
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service'
+import { RoleGuardService as RoleGuard } from './auth/role-guard.service'
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
@@ -217,7 +211,7 @@ export const ROUTES: Routes = [
     }
   },
   { path: '**', redirectTo: '' }
-];
+]
 ```
 
 For the /admin route, we’re still using canActivate to control navigation, but this time we’re passing an object on the data property which has that expectedRole key that we’ve already seen in the RoleGuardService.

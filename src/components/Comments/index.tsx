@@ -1,29 +1,30 @@
-import { useApp } from '@hooks/app';
-import { Theme } from '@interfaces/app';
+"use client"
+
+import { useApp } from '@hooks/useApp';
+import { AppTheme } from '@interfaces/app';
+import classNames from 'classnames'
 import { MutableRefObject, useEffect, useRef, useState } from 'react'
 
-import { CommentWrapper } from './styled';
+import styles from './styles.module.scss'
 
 type CommentProps = {
   title: string;
   className?: string;
 }
 
-const getCommentTheme = (theme: Theme | undefined): string => {
+const getCommentTheme = (theme: AppTheme | undefined): string => {
   switch (theme) {
-    case Theme.DARK:
-      return 'github-dark';
+    case AppTheme.Dark:
+      return 'github-dark'
     default:
       return 'github-light'
   }
 }
 
 const Comments = ({ title, className }: CommentProps) => {
-  const { githubRepo, theme } = useApp()
-
+  const { theme, githubRepo } = useApp()
   const [commentScript, setCommentScript] = useState<HTMLScriptElement>();
   const commentRef: MutableRefObject<any> = useRef(null)
-
 
   useEffect(() => {
     // https://utteranc.es/
@@ -43,7 +44,7 @@ const Comments = ({ title, className }: CommentProps) => {
     })
 
     setCommentScript(script);
-  }, [title, githubRepo, theme])
+  }, [title, theme, githubRepo])
 
   useEffect(() => {
     if (commentScript) {
@@ -51,7 +52,7 @@ const Comments = ({ title, className }: CommentProps) => {
     }
   }, [commentScript])
 
-  return <CommentWrapper className={className} ref={commentRef} />
+  return <div className={classNames(styles.layoutWrapper, className)} ref={commentRef} />
 }
 
 export default Comments
