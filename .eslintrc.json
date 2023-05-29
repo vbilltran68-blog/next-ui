@@ -1,17 +1,12 @@
 {
-  "root": true,
-  "env": {
-    "node": true,
-    "es2020": true,
-    "jest": true
-  },
-  "extends": ["next", "prettier"],
-  "plugins": ["simple-import-sort", "import"],
+  "extends": "next/core-web-vitals",
+  "plugins": ["simple-import-sort", "import", "unused-imports"],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "prefer-const": "error",
     "no-console": "warn",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "unused-imports/no-unused-imports": "error"
   }
 }

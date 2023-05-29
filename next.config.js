@@ -1,23 +1,10 @@
+/** @type {import('next').NextConfig} */
 const path = require('path')
 
-const envOptions = {
-  NICK_NAME: process.env.NICK_NAME,
-  TITLE: process.env.TITLE,
-}
-
 const nextConfig = {
-  env: envOptions,
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true
-  },
-  sassOptions: {
-    fiber: false,
-    includePaths: [path.join(__dirname, 'styles')],
-    outputStyle: 'compressed',
-    sourceMap: false,
-  },
   images: {
+    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: "https",
@@ -25,10 +12,16 @@ const nextConfig = {
       },
     ],
   },
+  sassOptions: {
+    fiber: false,
+    includePaths: [path.join(__dirname, 'styles')],
+    outputStyle: 'compressed',
+    sourceMap: false,
+  },
   webpack: (config) => {
     config.resolve.fallback = { fs: false }
     return config
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

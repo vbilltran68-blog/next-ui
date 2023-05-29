@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Wrapper } from './styled'
+import styles from './styles.module.scss'
 
 type AvatarProps = {
   src: string;
@@ -13,14 +13,14 @@ const Avatar = (props: AvatarProps) => {
   const { src, description, size, onClick } = props || {};
 
   return (
-    <Wrapper onClick={() => onClick && onClick()}>
+    <div className={styles.wrapper}  onClick={() => onClick && onClick()}>
       <Image
         src={src}
         alt={description ?? ''}
         width={size}
         height={size}
       />
-    </Wrapper>
+    </div>
   )
 }
 

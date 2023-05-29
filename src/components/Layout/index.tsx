@@ -1,34 +1,35 @@
+"use client"
+
 import Avatar from "@components/Avatar"
 import Navigation from "@components/Navigation"
-import { useApp } from "@hooks/app"
-import { NAVIGATION_ITEMS } from "@lib/constants"
+import { NAVIGATION_ITEMS } from "@constants/navigation.const"
+import { useApp } from "@hooks/useApp"
+import classNames from "classnames"
 import { PropsWithChildren } from "react"
 
-import { HeaderWrapper, LayoutWrapper, MainWrapper } from "./styled"
+import styles from './styles.module.scss'
 
 type LayoutProps = PropsWithChildren<{ noLayout?: boolean }>
 
-const Layout = ({ children, noLayout }: LayoutProps) => {
-  const { name, avatar, year, toggleTheme } = useApp()
+
+export default function Layout({ children, noLayout }: LayoutProps) {
+  const { name, icon, toggleTheme } = useApp()
 
   if (noLayout) return <div>{children}</div>
 
   return (
-    <LayoutWrapper className="no-interaction">
-      <HeaderWrapper>
-        <div className="profile">
-          <Avatar src={avatar} size={64} description="Software Engineer (NodeJS / ReactJS)" onClick={() => toggleTheme && toggleTheme()} />
-          <h1 className="title">{name}</h1>
+    <div className={classNames(styles.wrapper, 'no-interaction')}>
+      <div className={styles.headerWrapper}>
+        <div className={styles.profile}>
+          <Avatar src={icon} size={64} onClick={() => toggleTheme && toggleTheme()} />
+          <h1 className={styles.title}>{name}</h1>
         </div>
-        <Navigation items={NAVIGATION_ITEMS} className="nav" />
-        <div className="footer">
-          <p>© {year}</p>
+        <Navigation items={NAVIGATION_ITEMS} className={styles.nav} />
+        <div className={styles.footer}>
+          <p>© 2023</p>
         </div>
-      </HeaderWrapper>
-      <MainWrapper>{children}</MainWrapper>
-    </LayoutWrapper>
+      </div>
+      <div className={styles.mainWrapper}>{children}</div>
+    </div>
   )
 }
-
-export default Layout
-

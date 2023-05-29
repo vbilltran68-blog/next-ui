@@ -1,18 +1,20 @@
-import Icon from "@components/Icon";
-import { Theme } from "@interfaces/app"
+'use client'
+
+import Icon from "@components/Icon"
+import { useApp } from "@hooks/useApp"
+import { AppTheme } from "@interfaces/app"
 import { IconPath, IconType } from "@interfaces/icon"
 
-import { ToggleThemeWrapper } from "./styled"
+import styles from "./styles.module.scss"
 
-type DisplayModeProps = { theme: Theme | undefined; toggleTheme?: Function }
+const ToggleTheme = () => {
+  const { theme, toggleTheme } = useApp()
 
-const ToggleTheme = ({ theme, toggleTheme }: DisplayModeProps) => {
   return (
-    <ToggleThemeWrapper onClick={() => toggleTheme && toggleTheme()}>
-      <Icon src={IconPath[theme === Theme.DARK ? IconType.LightMode : IconType.DarkMode]} size={30} />
-    </ToggleThemeWrapper>
+    <div className={styles.layoutWrapper} onClick={() => toggleTheme && toggleTheme()}>
+      <Icon src={IconPath[theme === AppTheme.Dark ? IconType.LightMode : IconType.DarkMode]} size={30} />
+    </div>
   );
 }
 
 export default ToggleTheme
-

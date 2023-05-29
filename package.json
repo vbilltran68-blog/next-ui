@@ -1,58 +1,45 @@
 {
   "name": "vbilltran68-blog",
-  "private": true,
   "version": "1.0.0",
-  "description": "My personal blog about software development",
-  "author": "Bill Tran <tvkhue96@gmail.com>",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "npm run eslint && npm run prettier",
+    "eslint": "eslint --ignore-path .gitignore --ext .ts,.tsx",
+    "eclint": "eclint fix 'src/**/*'",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{html,json,xml,yml,md}\" -c",
-    "format": "yarn eslint --fix && yarn prettier --write && yarn lint"
+    "format": "npm run eclint && npm run eslint --fix && npm run prettier --write && npm run lint"
   },
   "dependencies": {
-    "@openlab/vercel-netlify-cms-github": "^1.1.1",
-    "@vercel/analytics": "^1.0.0",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.7.0",
+    "highlight.js": "^11.8.0",
     "localforage": "^1.10.0",
-    "marked": "^4.3.0",
-    "next": "^13.2.4",
-    "next-seo": "^6.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-svg": "^16.1.8",
-    "rfs": "^10.0.0",
-    "styled-components": "^5.3.9",
-    "styled-media-query": "^2.1.2"
+    "marked": "^5.0.2",
+    "marked-gfm-heading-id": "^3.0.3",
+    "marked-highlight": "^2.0.1",
+    "next": "13.4.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-svg": "^16.1.13",
+    "rfs": "^10.0.0"
   },
   "devDependencies": {
-    "@types/marked": "^4.0.8",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.32",
-    "@types/styled-components": "^5.1.26",
-    "eslint": "^8.39.0",
-    "eslint-config-next": "^13.3.1",
-    "eslint-config-prettier": "^8.8.0",
+    "@types/marked": "^5.0.0",
+    "@types/node": "20.2.4",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "eclint": "^2.8.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.8.8",
-    "sass": "^1.57.1",
-    "typescript": "5.0.3"
-  },
-  "license": "MIT",
-  "keywords": [
-    "nextjs",
-    "billtran",
-    "khuetran",
-    "blog"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vbilltran68/vbilltran68-blog"
+    "sass": "^1.62.1",
+    "typescript": "5.0.4"
   }
 }

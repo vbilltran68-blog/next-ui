@@ -1,9 +1,11 @@
-import { HtmlRenderWrapper } from "./styled"
+import classNames from "classnames"
+
+import styles from "./styles.module.scss"
 
 type MarkdownProps = { content: string; className?: string; }
 
 const HtmlRender = ({ content, className }: MarkdownProps) => {
-  return <HtmlRenderWrapper className={className} dangerouslySetInnerHTML={{ __html: content }} />;
+  return <div className={classNames(styles.layoutWrapper, className)} dangerouslySetInnerHTML={{ __html: content }} />;
 }
 
 export default HtmlRender

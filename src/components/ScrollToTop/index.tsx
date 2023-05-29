@@ -1,15 +1,14 @@
-import Icon from "@components/Icon";
+import Icon from "@components/Icon"
 import { IconPath, IconType } from "@interfaces/icon"
 
-import { ScrollWrapper } from "./styled"
+import styles from "./styled.module.scss"
 
 const ScrollToTop = () => {
   return (
-    <ScrollWrapper href="#top">
+    <a className={styles.layoutWrapper} href="#top">
       <Icon src={IconPath[IconType.HandTop]} size={30} />
-    </ScrollWrapper>
+    </a>
   );
 }
 
 export default ScrollToTop
-
