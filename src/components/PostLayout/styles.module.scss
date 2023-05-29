@@ -1,0 +1,59 @@
+@import '/src/styles/mixins/responsive';
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--color-bg-post);
+  font-family: var(--fonts-code);
+  color: var(--color-post);
+  scroll-behavior: smooth;
+  transition: all 1s ease-in-out;
+}
+
+.headerWrapper {
+  background-color: var(--color-bg-header);
+  color: var(--color-header);
+
+  .wrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 70rem;
+    padding: .5rem 5rem;
+    gap: 10px;
+
+    .backAction {
+      display: flex;
+      gap: 10px;
+      font-size: 20px;
+      line-height: 20px;
+      cursor: pointer;
+      font-family: var(--fonts-comic);
+    }
+  }
+
+  @include small {
+    .wrapper {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: fit-content;
+  width: 100%;
+  max-width: 70rem;
+  padding: 3rem 5rem 5rem 5rem;
+  font-size: 1.25rem;
+
+  @include small {
+    max-width: 100%;
+    padding: 2rem 1rem 5rem 1rem;
+  }
+}

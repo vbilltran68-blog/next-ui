@@ -1,8 +1,12 @@
-import { IconPath, IconType } from '@interfaces/icon';
+"use client"
 
-import { SvgWrapper } from './styled'
+import { IconPath, IconType } from '@interfaces/icon'
+import { ReactSVG } from 'react-svg'
 
-type IconProps = {
+import styles from './styles.module.scss'
+
+type IconProps =
+ {
   src?: string;
   type?: IconType;
   size: number;
@@ -13,14 +17,14 @@ const Icon = (props: IconProps) => {
   const { src = '#', type, description, size } = props || {};
 
   return (
-    <SvgWrapper
+    <ReactSVG
       src={type ? IconPath[type] : src}
       desc={description ?? ''}
       width={`${size}px`}
       height={`${size}px`}
       fallback={() => <span>Error!</span>}
       evalScripts="always"
-      loading={() => <span>Loading</span>}
+      className={styles.layoutWrapper}
     />
   )
 }

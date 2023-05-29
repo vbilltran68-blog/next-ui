@@ -1,19 +1,23 @@
-export enum Theme {
-  NONE = 'none',
-  DEFAULT = 'default',
-  DARK = 'dark',
+export enum AppTheme {
+  Light = 'light',
+  Dark = 'dark',
+}
+
+export enum AppLocale {
+  English = "en",
+  Vietnamese = "vi"
 }
 
 export interface App {
+  theme: AppTheme;
+  toggleTheme: Function;
+  locale: AppLocale;
+  themeColor: string;
   name: string;
-  avatar: string;
-  year: number;
   title: string;
   description: string;
-  theme?: Theme;
-  toggleTheme?: Function;
-  githubRepo?: string;
+  icon: string;
+  keywords: string[];
   appURL: string;
-  locale?: string;
-  themeColor?: string;
+  githubRepo: string;
 }

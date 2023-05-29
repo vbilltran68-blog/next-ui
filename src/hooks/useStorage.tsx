@@ -1,4 +1,4 @@
-import storage from "localforage";
+import storage from "localforage"
 import { useEffect, useState } from "react"
 
 export function useStorage<T>(key: string, fallback: T): [T | undefined, (newValue: T) => void] {

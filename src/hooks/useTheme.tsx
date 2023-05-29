@@ -1,17 +1,18 @@
-import { Theme } from "@interfaces/app"
-import { useEffect } from "react";
+"use client"
+
+import { AppTheme } from "@interfaces/app"
 
 import { useStorage } from "./useStorage"
 
-const ThemeKey = 'app-theme';
+const ThemeKey = 'app-theme'
 
-export const useTheme = (): [Theme | undefined, () => void] => {
-  const [theme, setTheme] = useStorage(ThemeKey, Theme.DEFAULT);
+export const useTheme = (): [AppTheme | undefined, () => void] => {
+  const [theme, setTheme] = useStorage<AppTheme | undefined>(ThemeKey, undefined);
 
   const toggleTheme = () => {
-    const nextValue = theme === Theme.DEFAULT ? Theme.DARK : Theme.DEFAULT;
+    const nextValue = theme === AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
     setTheme(nextValue);
-  };
+  }
 
   return [theme, toggleTheme];
 }

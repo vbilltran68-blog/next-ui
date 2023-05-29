@@ -1,17 +1,16 @@
 import cs from 'classnames'
 import { PropsWithChildren } from "react"
 
-import { CardWrapper } from "./styled"
+import styles from './styles.module.scss'
 
 type LayoutProps = PropsWithChildren<{ onClick?: () => void, className: string}>
 
 const Card = ({ children, className, onClick }: LayoutProps) => {
   return (
-    <CardWrapper className={cs(className, 'flex p-3')} onClick={() => onClick && onClick()}>
+    <div className={cs(styles.wrapper, className, 'flex p-3')} onClick={() => onClick && onClick()}>
       {children}
-    </CardWrapper>
+    </div>
   )
 }
 
 export default Card
-

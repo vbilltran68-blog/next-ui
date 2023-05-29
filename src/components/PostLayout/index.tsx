@@ -1,38 +1,25 @@
+import Back from "@components/Back"
 import ScrollToTop from "@components/ScrollToTop"
 import ToggleTheme from "@components/ToggleTheme"
-import UnicodeIcon from "@components/UnicodeIcon"
-import { useApp } from "@hooks/app"
-import { useRouter } from "next/router"
-import { PropsWithChildren } from "react"
+import classNames from "classnames"
 
-import { HeaderWrapper, LayoutWrapper, MainWrapper } from "./styled"
+import styles from './styles.module.scss'
 
-type PostLayoutProps = PropsWithChildren<{ className?: string }>;
-
-const PostLayout = ({ children, className }: PostLayoutProps) => {
-  const router = useRouter()
-  const { theme, toggleTheme } = useApp()
-
-  const backToPreviousPage = () => {
-    router.replace('/');
-  }
-
+export default function PostLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <LayoutWrapper>
-      <HeaderWrapper id="top">
-        <div className="wrapper">
-          <div className="back-action"  onClick={() => backToPreviousPage()}>
-            <UnicodeIcon content="➜" rotateDeg={180} fontSize="16px" />
-            back
-          </div>
+    <div className={styles.layoutWrapper}>
+      <div className={styles.headerWrapper} id="top">
+        <div className={styles.wrapper}>
+          <Back className={styles.backAction} />
         </div>
-      </HeaderWrapper>
-      <MainWrapper className={className}>{children}</MainWrapper>
-      <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
+      </div>
+      <div className={classNames(styles.mainWrapper, 'flex-1')}>{children}</div>
+      <ToggleTheme />
       <ScrollToTop />
-    </LayoutWrapper>
+    </div>
   )
 }
-
-export default PostLayout
-

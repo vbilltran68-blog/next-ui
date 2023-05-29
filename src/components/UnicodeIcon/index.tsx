@@ -1,18 +1,20 @@
-import { Wrapper } from './styled'
+import classNames from 'classnames';
+
+import styles from './styles.module.scss'
 
 type IconProps = {
   content: string;
   fontSize: string;
-  classNames?: string;
+  className?: string;
   rotateDeg?: number
 }
 
 const UnicodeIcon = (props: IconProps) => {
-  const { content, fontSize, classNames, rotateDeg } = props || {};
+  const { content, fontSize, className, rotateDeg } = props || {};
   return (
-    <Wrapper className={classNames}>
+    <div className={classNames(styles.wrapper, className)}>
       <div style={{ fontSize, transform: `rotate(${rotateDeg ?? 0}deg)` }}>{content}</div>
-    </Wrapper>
+    </div>
   )
 }
 

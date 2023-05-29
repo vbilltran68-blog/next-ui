@@ -1,10 +1,12 @@
-import Icon from '@components/Icon'
-import { NavigationItem } from '@interfaces/navigation';
-import cs from 'classnames'
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+"use client"
 
-import { NavItemWrapper, Wrapper } from './styled';
+import Icon from '@components/Icon'
+import { NavigationItem } from '@interfaces/navigation'
+import classNames from 'classnames'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+import styles from './styles.module.scss'
 
 type NavItemProps = {
   data: NavigationItem;
@@ -14,12 +16,12 @@ type NavItemProps = {
 const NavItem = (props: NavItemProps) => {
   const { data, isActive } = props;
   return (
-    <NavItemWrapper className={cs({ active: isActive })}>
+    <div className={classNames(styles.navItemWrapper,  isActive ? styles.active : '')}>
       <Link href={data.href}>
           <Icon src={data.icon} size={30} />
-          <div className="title">{data.label}</div>
+          <div className={styles.title}>{data.label}</div>
       </Link>
-    </NavItemWrapper>
+    </div>
 
   )
 }
@@ -31,12 +33,12 @@ type NavigationProps = {
 
 const Navigation = (props: NavigationProps) => {
   const { items, className } = props
-  const router = useRouter()
+  const pathName = usePathname()
 
   return (
-    <Wrapper className={cs(className)}>
-      {items.map((nav, index) => <NavItem key={`nav-${index}`} data={nav} isActive={router.pathname === nav.href} />)}
-    </Wrapper>
+    <div className={classNames(styles.wrapper, className)}>
+      {items.map((nav, index) => <NavItem key={`nav-${index}`} data={nav} isActive={pathName === nav.href} />)}
+    </div>
   )
 }
 
