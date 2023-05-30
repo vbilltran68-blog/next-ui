@@ -1,9 +1,11 @@
+"use client"
+
 import cs from 'classnames'
 import { PropsWithChildren } from "react"
 
 import styles from './styles.module.scss'
 
-type LayoutProps = PropsWithChildren<{ onClick?: () => void, className: string}>
+type LayoutProps = PropsWithChildren<{ onClick?: () => void, className?: string}>
 
 const Card = ({ children, className, onClick }: LayoutProps) => {
   return (

@@ -20,7 +20,7 @@ export default function PostLayout({
           <FlexibleToggleTheme />
         </div>
       </div>
-      <div className={classNames(styles.mainWrapper, 'flex-1')}>{children}</div>
+      <div className={classNames(styles.mainWrapper, 'flex-1 page-a4')}>{children}</div>
       <FlexibleScrollToTop />
     </div>
   )

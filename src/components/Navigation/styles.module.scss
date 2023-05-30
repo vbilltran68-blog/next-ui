@@ -18,28 +18,35 @@
 
 .navItemWrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   width: 100%;
-  border-top: 1px solid var(--color-header);
+  border-top: 1px solid var(--color-muted);
 
   &:last-child {
-    border-bottom: 1px solid var(--color-header);
+    border-bottom: 1px solid var(--color-muted);
   }
 
-  a {
+  .linkWrapper {
     display: flex;
-    flex-direction: column;
     gap: 10px;
     align-items: center;
-    padding: 10px 5px;
+    padding: 10px 20px 10px 10px;
     color: inherit;
     font-size: 1.2rem;
-  }
+    width: 100%;
 
-  svg {
-    path, rect {
-      fill: var(--color-header);
+    .icon {
+      min-width: 35px;
+      max-width: 35px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+
+        path, rect {
+          fill: var(--color-header);
+        }
+      }
     }
   }
 

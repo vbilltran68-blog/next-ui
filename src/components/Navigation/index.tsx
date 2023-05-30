@@ -17,8 +17,8 @@ const NavItem = (props: NavItemProps) => {
   const { data, isActive } = props;
   return (
     <div className={classNames(styles.navItemWrapper,  isActive ? styles.active : '')}>
-      <Link href={data.href}>
-          <Icon src={data.icon} size={30} />
+      <Link href={data.href} className={styles.linkWrapper}>
+          <Icon src={data.icon} size={30} className={styles.icon}  />
           <div className={styles.title}>{data.label}</div>
       </Link>
     </div>

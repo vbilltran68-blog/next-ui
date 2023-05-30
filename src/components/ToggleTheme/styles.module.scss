@@ -1,6 +1,6 @@
 .layoutWrapper {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,21 +8,19 @@
   cursor: pointer;
   opacity: 0.8;
 
-  transition: scroll 2s ease-in-out;
-
   svg {
-    width: var(--icon-tool-size);
-    height: var(--icon-tool-size);
+    width: 20px;
+    height: 20px;
 
     path {
-      fill: orangered;
+      fill: var(--color-muted);
     }
   }
 
   &.night {
     svg {
       path {
-        fill: var(--color-accent);
+        fill: var(--color-description);
       }
     }
   }
