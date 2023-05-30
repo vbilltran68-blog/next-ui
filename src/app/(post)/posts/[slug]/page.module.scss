@@ -1,4 +1,21 @@
-.htmlRenderWrapper {
-  padding: 18px 0 20px 0;
-  border-bottom: 1px dashed var(--color-muted);
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  .bottomDashed {
+    border-bottom: 1px dashed var(--color-muted);
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
 }
