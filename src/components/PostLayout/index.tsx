@@ -1,9 +1,11 @@
 import Back from "@components/Back"
-import ScrollToTop from "@components/ScrollToTop"
-import ToggleTheme from "@components/ToggleTheme"
 import classNames from "classnames"
+import dynamic from "next/dynamic"
 
 import styles from './styles.module.scss'
+
+const FlexibleToggleTheme = dynamic(() => import('@components/ToggleTheme'))
+const FlexibleScrollToTop = dynamic(() => import('@components/ScrollToTop'))
 
 export default function PostLayout({
   children,
@@ -15,11 +17,11 @@ export default function PostLayout({
       <div className={styles.headerWrapper} id="top">
         <div className={styles.wrapper}>
           <Back className={styles.backAction} />
+          <FlexibleToggleTheme />
         </div>
       </div>
       <div className={classNames(styles.mainWrapper, 'flex-1')}>{children}</div>
-      <ToggleTheme />
-      <ScrollToTop />
+      <FlexibleScrollToTop />
     </div>
   )
 }

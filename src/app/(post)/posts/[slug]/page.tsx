@@ -1,14 +1,29 @@
-import Comments from "@components/Comments"
-import HtmlRender from "@components/HtmlRender"
-import Tags from "@components/Tags"
 import { Post } from "@interfaces/post"
 import { getPostBySlug,getPostFileNames } from "@services/api.service"
 import datetime from "@services/datetime.service"
 import { markdownToHtml } from "@services/markdown.service"
+import classNames from "classnames"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
 
 import styles from './page.module.scss'
+
+const FlexibleShare = dynamic(() => import('@components/Share'), {
+  loading: () => <p>share loading...</p>,
+})
+
+const FlexibleTags = dynamic(() => import('@components/Tags'), {
+  loading: () => <p>tags loading...</p>,
+})
+
+const FlexibleHtmlRender = dynamic(() => import('@components/HtmlRender'), {
+  loading: () => <p>content loading...</p>,
+})
+
+const FlexibleComments = dynamic(() => import('@components/Comments'), {
+  loading: () => <p>comment loading...</p>,
+})
 
 export async function generateMetadata(
   { params }: any,
@@ -55,15 +70,20 @@ export default async function Home({ params }: any) {
   }
 
   return (
-    <section>
-      <div className="flex">
-        <span className="text-primary">{datetime(createdAt).format('DD/MM/YYYY')}</span>
-        <span className="pl-2 text-muted">({timeToRead})</span>
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
+        <div className="flex">
+          <span className="text-primary">{datetime(createdAt).format('DD/MM/YYYY')}</span>
+          <span className="pl-2 text-muted">({timeToRead})</span>
+        </div>
+        <h1>{title || '...'}</h1>
+        <FlexibleTags data={tags} />
+        <div className={classNames(styles.share)}>
+          <FlexibleShare tags={tags} />
+        </div>
       </div>
-      <h1 className="header pt-1 py-3">{title || '...'}</h1>
-      <Tags data={tags} className="pb-3" />
-      <HtmlRender className={styles.htmlRenderWrapper} content={content ?? ""} />
-      <Comments title={title} className="pb-3" />
-    </section>
+      <FlexibleHtmlRender className={styles.bottomDashed} content={content ?? ""} />
+      <FlexibleComments title={title} className="pb-3" />
+    </div>
   )
 }
