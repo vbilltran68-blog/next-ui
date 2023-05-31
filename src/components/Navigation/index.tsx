@@ -22,7 +22,6 @@ const NavItem = (props: NavItemProps) => {
           <div className={styles.title}>{data.label}</div>
       </Link>
     </div>
-
   )
 }
 

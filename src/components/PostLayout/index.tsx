@@ -6,6 +6,7 @@ import styles from './styles.module.scss'
 
 const FlexibleToggleTheme = dynamic(() => import('@components/ToggleTheme'))
 const FlexibleScrollToTop = dynamic(() => import('@components/ScrollToTop'))
+const FlexibleShare = dynamic(() => import('@components/Share'))
 
 export default function PostLayout({
   children,
@@ -14,14 +15,20 @@ export default function PostLayout({
 }) {
   return (
     <div className={styles.layoutWrapper}>
-      <div className={styles.headerWrapper} id="top">
+      <div id="top"></div>
+      <div className={styles.headerWrapper}>
         <div className={styles.wrapper}>
-          <Back className={styles.backAction} />
-          <FlexibleToggleTheme />
+          <Back />
+          <div className={styles.tools}>
+            <FlexibleToggleTheme />
+            <FlexibleShare title="ABC" />
+          </div>
         </div>
       </div>
       <div className={classNames(styles.mainWrapper, 'flex-1 page-a4')}>{children}</div>
-      <FlexibleScrollToTop />
+      <div className={styles.scrollToTop}>
+        <FlexibleScrollToTop />
+      </div>
     </div>
   )
 }

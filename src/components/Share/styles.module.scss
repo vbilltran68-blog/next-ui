@@ -1,3 +1,29 @@
 .wrapper {
+  width: 20px;
+  height: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      fill: var(--color-muted);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+
+    svg {
+      path {
+        fill: var(--color-accent);
+      }
+    }
+  }
 }

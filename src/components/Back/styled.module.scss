@@ -1,33 +1,16 @@
-.layoutWrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
+@import '/src/styles/mixins/responsive';
+
+.wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+  gap: 10px;
+  font-size: 20px;
+  line-height: 20px;
   cursor: pointer;
-  opacity: 0.8;
-  transition: scroll 2s ease-in-out;
+  font-family: var(--fonts-comic);
 
-  svg {
-    width: var(--icon-tool-size);
-    height: var(--icon-tool-size);
-
-    path {
-      fill: var(--color-muted);
-    }
-  }
-
-  &:hover {
-    opacity: 1;
-
-    svg {
-      path {
-        fill: var(--color-link);
-      }
+  @include small {
+    .title {
+      display: none;
     }
   }
 }
