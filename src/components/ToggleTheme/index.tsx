@@ -8,12 +8,16 @@ import classNames from "classnames"
 
 import styles from "./styles.module.scss"
 
-const ToggleTheme = () => {
+type Props = {
+  className?: string;
+}
+
+const ToggleTheme = ({ className }: Props) => {
   const { theme, toggleTheme } = useApp()
 
   return (
-    <div className={classNames(styles.layoutWrapper, theme === AppTheme.Dark ? styles.night : '')} onClick={() => toggleTheme && toggleTheme()}>
-      <Icon src={IconPath[theme === AppTheme.Dark ? IconType.DarkMode : IconType.LightMode]} size={30} />
+    <div className={classNames(styles.layoutWrapper, className, theme === AppTheme.Dark ? styles.night : '')} onClick={() => toggleTheme && toggleTheme()}>
+      <Icon src={IconPath[theme === AppTheme.Dark ? IconType.LightMode : IconType.DarkMode]} size={20} />
     </div>
   );
 }

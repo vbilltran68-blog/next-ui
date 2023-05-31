@@ -36,10 +36,17 @@
     }
   }
 
+  @include medium {
+    .wrapper {
+      max-width: 100%;
+      padding: .5rem 2rem;
+    }
+  }
+
   @include small {
     .wrapper {
       max-width: 100%;
-      padding: 1rem;
+      padding: .5rem 1rem;
     }
   }
 }
@@ -50,12 +57,4 @@
   margin: 0 auto;
   height: fit-content;
   width: 100%;
-  max-width: 70rem;
-  padding: 3rem 5rem 5rem 5rem;
-  font-size: 1.25rem;
-
-  @include small {
-    max-width: 100%;
-    padding: 2rem 1rem 5rem 1rem;
-  }
 }

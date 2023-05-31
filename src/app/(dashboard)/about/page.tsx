@@ -1,3 +1,4 @@
+import Card from '@components/Card'
 import HtmlRender from '@components/HtmlRender'
 import { Post } from '@interfaces/post'
 import { getPostBySlug } from '@services/api.service'
@@ -36,12 +37,13 @@ export default async function About() {
   if (!data) notFound()
 
   return (
-    <section>
-      <h1 className="flex flex-center text-code mb-3">{title}</h1>
-      <HtmlRender content={content?.replace(
-        '$year',
-        datetime.now().year().toString()
-      ) ?? ''} />
-    </section>
+    <div className="flex flex-center w-100">
+      <Card className="flex-column page-a4">
+        <HtmlRender content={content?.replace(
+          '$year',
+          datetime.now().year().toString()
+        ) ?? ''} />
+      </Card>
+    </div>
   )
 }

@@ -3,7 +3,7 @@ import { NavigationItem } from '@interfaces/navigation'
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
-    label: 'Notes',
+    label: 'Feed',
     href: '/',
     icon: IconPath[IconType.Note]
   },

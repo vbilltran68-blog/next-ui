@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import Image from 'next/image'
+import { memo } from 'react';
 
 import styles from './styles.module.scss'
 
@@ -6,14 +8,15 @@ type AvatarProps = {
   src: string;
   size: number;
   description?: string;
-  onClick: () => {}
+  onClick: () => {};
+  className?: string;
 }
 
 const Avatar = (props: AvatarProps) => {
-  const { src, description, size, onClick } = props || {};
+  const { src, description, size, onClick, className } = props || {};
 
   return (
-    <div className={styles.wrapper}  onClick={() => onClick && onClick()}>
+    <div className={classNames(styles.wrapper, className)}  onClick={() => onClick && onClick()}>
       <Image
         src={src}
         alt={description ?? ''}
@@ -24,4 +27,4 @@ const Avatar = (props: AvatarProps) => {
   )
 }
 
-export default Avatar
+export default memo(Avatar, (prev, next) => prev.src === next.src && prev.size === next.size)
