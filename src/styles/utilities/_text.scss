@@ -9,3 +9,7 @@
 .text-truncate-3 {
   @include text-truncate(3);
 }
+
+.text-align-center {
+  text-align: center;
+}

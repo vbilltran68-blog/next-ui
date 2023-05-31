@@ -6,7 +6,7 @@ import styles from "./styled.module.scss"
 const ScrollToTop = () => {
   return (
     <a className={styles.layoutWrapper} href="#top">
-      <Icon src={IconPath[IconType.HandTop]} size={30} />
+      <Icon src={IconPath[IconType.HandTop]} size={20} />
     </a>
   );
 }
