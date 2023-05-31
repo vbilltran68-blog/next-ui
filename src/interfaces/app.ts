@@ -20,4 +20,5 @@ export interface App {
   keywords: string[];
   appURL: string;
   githubRepo: string;
+  githubOwner?: string;
 }

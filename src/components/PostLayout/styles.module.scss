@@ -26,13 +26,16 @@
     padding: .5rem 5rem;
     gap: 10px;
 
-    .backAction {
+    .tools {
       display: flex;
-      gap: 10px;
-      font-size: 20px;
-      line-height: 20px;
-      cursor: pointer;
-      font-family: var(--fonts-comic);
+      align-items: center;
+      gap: 2rem;
+
+      svg {
+        path {
+          fill: var(--color-header);
+        }
+      }
     }
   }
 
@@ -44,6 +47,10 @@
   }
 
   @include small {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
     .wrapper {
       max-width: 100%;
       padding: .5rem 1rem;
@@ -57,4 +64,15 @@
   margin: 0 auto;
   height: fit-content;
   width: 100%;
+}
+
+.scrollToTop {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  @include small {
+    bottom: 50px;
+    right: 10px;
+  }
 }

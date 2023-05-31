@@ -5,6 +5,7 @@ export enum IconType {
   HandTop = 'hand-top',
   LightMode = 'light-mode',
   DarkMode = 'dark-mode',
+  Share = 'share',
 }
 
 export const IconPath: Record<string, string> = {
@@ -14,4 +15,5 @@ export const IconPath: Record<string, string> = {
   [IconType.HandTop]: '/assets/svg-icons/hand-top.svg',
   [IconType.LightMode]: '/assets/svg-icons/light-mode.svg',
   [IconType.DarkMode]: '/assets/svg-icons/dark-mode.svg',
+  [IconType.Share]: '/assets/svg-icons/share.svg',
 }

@@ -15,7 +15,7 @@ const FlexibleToggleTheme = dynamic(() => import('@components/ToggleTheme'))
 type LayoutProps = PropsWithChildren<{ noLayout?: boolean }>
 
 export default function Layout({ children, noLayout }: LayoutProps) {
-  const { name, description, icon, toggleTheme } = useApp()
+  const { name, description, icon, toggleTheme, githubOwner } = useApp()
 
   if (noLayout) return <div>{children}</div>
 
@@ -34,7 +34,7 @@ export default function Layout({ children, noLayout }: LayoutProps) {
         </div>
         <FlexibleNavigation items={NAVIGATION_ITEMS} className={styles.nav} />
         <div className={styles.footer}>
-          <p>© 2023</p>
+          <p>© {githubOwner}</p>
         </div>
       </div>
       <div className={styles.mainWrapper}>{children}</div>

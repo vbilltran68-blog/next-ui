@@ -17,14 +17,6 @@
     }
   }
 
-  &.night {
-    svg {
-      path {
-        fill: var(--color-description);
-      }
-    }
-  }
-
   &:hover {
     opacity: 1;
 

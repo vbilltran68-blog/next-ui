@@ -2,16 +2,11 @@ import { Post } from "@interfaces/post"
 import { getPostBySlug,getPostFileNames } from "@services/api.service"
 import datetime from "@services/datetime.service"
 import { markdownToHtml } from "@services/markdown.service"
-import classNames from "classnames"
 import { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
 
 import styles from './page.module.scss'
-
-const FlexibleShare = dynamic(() => import('@components/Share'), {
-  loading: () => <p>share loading...</p>,
-})
 
 const FlexibleTags = dynamic(() => import('@components/Tags'), {
   loading: () => <p>tags loading...</p>,
@@ -78,9 +73,6 @@ export default async function Home({ params }: any) {
         </div>
         <h1>{title || '...'}</h1>
         <FlexibleTags data={tags} />
-        <div className={classNames(styles.share)}>
-          <FlexibleShare tags={tags} />
-        </div>
       </div>
       <FlexibleHtmlRender className={styles.bottomDashed} content={content ?? ""} />
       <FlexibleComments title={title} className="pb-3" />
