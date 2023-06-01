@@ -8,6 +8,20 @@
   cursor: pointer;
   font-family: var(--fonts-comic);
 
+  .icon {
+    width: 20px;
+    height: 20px;
+    svg {
+      width: 20px;
+      height: 20px;
+
+      path {
+        fill: var(--color-muted);
+      }
+    }
+  }
+
+
   @include small {
     .title {
       display: none;

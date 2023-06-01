@@ -8,16 +8,15 @@ type AvatarProps = {
   src: string;
   size: number;
   description?: string;
-  onClick: () => {};
   className?: string;
   externalSource?: boolean;
 }
 
 const Avatar = (props: AvatarProps) => {
-  const { src, description, size, onClick, className, externalSource } = props || {};
+  const { src, description, size, className, externalSource } = props || {};
 
   return (
-    <div className={classNames(styles.wrapper, className)}  onClick={() => onClick && onClick()}>
+    <div className={classNames(styles.wrapper, className)}>
       <Image
         src={src}
         alt={description ?? ''}

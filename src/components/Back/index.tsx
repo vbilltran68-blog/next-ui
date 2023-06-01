@@ -1,6 +1,7 @@
 "use client"
 
-import UnicodeIcon from "@components/UnicodeIcon"
+import Icon from "@components/Icon"
+import { IconPath, IconType } from "@interfaces/icon"
 import classNames from "classnames"
 import { useRouter } from "next/navigation"
 
@@ -13,7 +14,7 @@ const Back = ({ className }: BackProps) => {
 
   return (
     <div className={classNames(styles.wrapper, className)} onClick={() => router.replace('/')}>
-      <UnicodeIcon content="➜" rotateDeg={180} fontSize="16px" />
+      <Icon src={IconPath[IconType.Back]} size={20} className={styles.icon}  />
       <span className={styles.title}>back</span>
     </div>
   )
