@@ -27,6 +27,7 @@ export async function generateMetadata(
   const { title, description } = post?.data || {}
 
   return {
+    metadataBase: new URL(process.env.APP_URL ?? ''),
     title,
     description,
     openGraph: {

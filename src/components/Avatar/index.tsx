@@ -10,10 +10,11 @@ type AvatarProps = {
   description?: string;
   onClick: () => {};
   className?: string;
+  externalSource?: boolean;
 }
 
 const Avatar = (props: AvatarProps) => {
-  const { src, description, size, onClick, className } = props || {};
+  const { src, description, size, onClick, className, externalSource } = props || {};
 
   return (
     <div className={classNames(styles.wrapper, className)}  onClick={() => onClick && onClick()}>
@@ -22,6 +23,7 @@ const Avatar = (props: AvatarProps) => {
         alt={description ?? ''}
         width={size}
         height={size}
+        unoptimized={externalSource ?? false}
       />
     </div>
   )

@@ -1,10 +1,11 @@
-import '@styles/main.scss'
+import '@styles/global.scss'
 
 import { AppProvider } from '@hooks/useApp'
 import config from '@root/app.config.json'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.APP_URL ?? ''),
   title: config.title,
   description: config.description,
   icons: {

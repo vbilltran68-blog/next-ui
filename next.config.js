@@ -4,6 +4,7 @@ const path = require('path')
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     minimumCacheTTL: 60,
     remotePatterns: [
@@ -14,10 +15,7 @@ const nextConfig = {
     ],
   },
   sassOptions: {
-    fiber: false,
     includePaths: [path.join(__dirname, 'styles')],
-    outputStyle: 'compressed',
-    sourceMap: false,
   },
   webpack: (config) => {
     config.resolve.fallback = { fs: false }
