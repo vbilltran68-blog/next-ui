@@ -8,6 +8,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.APP_URL ?? ''),
   title: "Thông tin",
   description: "Chém gió, bàn luận linh tinh",
   robots: { index: true, follow: true },
