@@ -21,7 +21,7 @@ export default function Layout({ children, noLayout }: LayoutProps) {
     <div className={classNames(styles.wrapper, 'no-interaction')}>
       <div className={styles.headerWrapper}>
         <div className={styles.profile}>
-          <Avatar src={icon} size={64} className={styles.avatar} externalSource onClick={() => toggleTheme && toggleTheme()} />
+          <Avatar src={icon} size={64} className={styles.avatar} externalSource />
           <div>
             <h1 className={styles.title}>{name}</h1>
             <p className={classNames(styles.role, 'flex flex-center text-code text-muted mt-2 text-align-center')}>{description}</p>

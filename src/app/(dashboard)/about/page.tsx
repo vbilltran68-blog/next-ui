@@ -33,7 +33,6 @@ async function getProfile(): Promise<Post | null> {
 
 export default async function About() {
   const { data, content } = await getProfile() || {}
-  const { title } = data || {}
 
   if (!data) notFound()
 
