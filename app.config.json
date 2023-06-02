@@ -2,7 +2,7 @@
   "name": "Bill's Blog",
   "title": "Bill's Blog",
   "description": "Life-Tech-Love-Passion talk",
-  "icon": "https://avatars.githubusercontent.com/u/28431254?v=4",
+  "icon": "/assets/logo/144x144.png",
   "keywords": ["vbilltran68", "billblog", "khuetran", "nextblog"],
   "themeColor": "#FFFFFF",
   "githubRepo": "vbilltran68-blog/markdown-posts",
