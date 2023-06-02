@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   description: config.description,
   icons: {
     icon: config.icon,
-    apple: config.icon,
+    apple: {
+      rel: 'apple-touch-icon-precomposed',
+      url: config.icon,
+      sizes: '114x114',
+    }
   },
   keywords: config.keywords,
   robots: { index: true, follow: true },
