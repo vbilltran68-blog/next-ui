@@ -1,11 +1,16 @@
 import Icon from "@components/Icon"
 import { IconPath, IconType } from "@interfaces/icon"
+import classNames from "classnames";
 
 import styles from "./styled.module.scss"
 
-const ScrollToTop = () => {
+type Props = {
+  className?: string;
+}
+
+const ScrollToTop = ({ className }: Props) => {
   return (
-    <a className={styles.layoutWrapper} href="#top">
+    <a className={classNames(styles.layoutWrapper, className)} href="#top">
       <Icon src={IconPath[IconType.HandTop]} size={20} />
     </a>
   );
