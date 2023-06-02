@@ -21,7 +21,7 @@ export default function PostLayout({
           <Back />
           <div className={styles.tools}>
             <FlexibleToggleTheme />
-            <FlexibleShare title="ABC" />
+            <FlexibleShare />
           </div>
         </div>
       </div>
