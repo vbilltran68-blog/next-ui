@@ -1,4 +1,5 @@
-$color-background-mark: yellow;
+$double-quote-background: yellow;
+$double-quote-color: #000;
 
 .layoutWrapper {
   font-family: monospace, sans-serif;
@@ -81,8 +82,8 @@ $color-background-mark: yellow;
 
   em {
     font-style: italic;
-    background-color: rgba($color-background-mark, .7);
-    color: var(--color-bg-post);
+    background-color: rgba($double-quote-background, .7);
+    color: $double-quote-color;
   }
 
   strong {
