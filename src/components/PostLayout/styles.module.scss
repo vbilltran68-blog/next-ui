@@ -13,9 +13,6 @@
 }
 
 .headerWrapper {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
   background-color: var(--color-bg-header);
   color: var(--color-header);
 
@@ -43,7 +40,8 @@
   }
 
   @include medium {
-
+    position: sticky;
+    top: 0;
     .wrapper {
       max-width: 100%;
       padding: .5rem 2rem;
