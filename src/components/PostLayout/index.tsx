@@ -20,15 +20,15 @@ export default function PostLayout({
         <div className={styles.wrapper}>
           <Back />
           <div className={styles.tools}>
-            <FlexibleToggleTheme />
-            <FlexibleShare />
+            <FlexibleToggleTheme className={styles.btn} />
+            <FlexibleShare className={styles.btn} />
+            <div className={styles.scrollToTop}>
+              <FlexibleScrollToTop className={styles.btn} />
+            </div>
           </div>
         </div>
       </div>
       <div className={classNames(styles.mainWrapper, 'flex-1 page-a4')}>{children}</div>
-      <div className={styles.scrollToTop}>
-        <FlexibleScrollToTop />
-      </div>
     </div>
   )
 }
