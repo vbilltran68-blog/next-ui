@@ -1,0 +1,27 @@
+{
+  "short_name": "Bill's Blog",
+  "name": "Bill's Blog",
+  "icons": [
+    {
+      "src": "/assets/logo/57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/assets/logo/72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/assets/logo/144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1D2226",
+  "theme_color": "#1D2226",
+  "description": "Technical-Life-Love-Passing sharing"
+}
