@@ -33,7 +33,17 @@ export const metadata: Metadata = {
   },
   keywords: config.keywords,
   robots: { index: true, follow: true },
-  themeColor: config.themeColor,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#1D2226" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" }
+  ],
+  viewport: "width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui",
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': config.themeColor,
+  },
+  manifest: "/manifest.json",
 }
 
 export default function RootLayout({
@@ -43,25 +53,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="none">
-      <head>
-        {/* <!-- Allow web app to be run in full-screen mode - iOS. --> */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-
-        {/* <!-- Allow web app to be run in full-screen mode - Android. --> */}
-        <meta name="mobile-web-app-capable" content="yes" />
-
-        {/* <!-- Set the viewport. --> */}
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui" />
-
-        {/* <!-- Disable automatic phone number detection. --> */}
-        <meta name="format-detection" content="telephone=no" />
-
-        {/* <!-- Windows dock color --> */}
-        <meta name="msapplication-TileColor" content={config.themeColor} />
-
-        {/* <!-- Android dock color --> */}
-        <meta name="theme-color" content={config.themeColor} />
-      </head>
       <body suppressHydrationWarning={true}>
         <AppProvider>{children}</AppProvider>
       </body>
