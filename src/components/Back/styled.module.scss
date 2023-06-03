@@ -23,11 +23,11 @@
 
   &:hover {
     opacity: 1;
-    color: var(--color-accent);
+    color: var(--color-link);
 
     svg {
       path {
-        fill: var(--color-accent);
+        fill: var(--color-link) !important;
       }
     }
   }
