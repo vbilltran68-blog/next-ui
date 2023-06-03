@@ -15,8 +15,10 @@ type Props = {
 const ToggleTheme = ({ className }: Props) => {
   const { theme, toggleTheme } = useApp()
 
+  if (!toggleTheme) return null
+
   return (
-    <div className={classNames(styles.layoutWrapper, className)} onClick={() => toggleTheme && toggleTheme()}>
+    <div className={classNames(styles.layoutWrapper, className)} onClick={() => toggleTheme()}>
       <Icon src={IconPath[theme === AppTheme.Dark ? IconType.LightMode : IconType.DarkMode]} size={20} />
     </div>
   );
